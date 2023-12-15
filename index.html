@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Language learning</title>
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="again-modalw" class="modalw">
+        <div class="modal-innerw">
+            <div class="text"></div>
+            <button>Спробувати ще раз</button>
+        </div>
+    </div>
+    <div id="main">
+        <div id="stat">
+            <div class="correct"></div>
+            <div class="incorrect"></div>
+        </div>
+        <div id="guess-block">
+            <img src="img/placeholder.jpg" alt="none"/>
+            <div class="word"></div>
+        </div>
+        <div id="card-nav">
+            <span class="left" onclick="prevCard()"></span>
+            <div class="card-pos">1/10</div>
+            <span class="right" onclick="nextCard()"></span>
+        </div>
+        <div id="enter">
+            <input type="text" placeholder="Введіть переклад">
+            <button id="submit">Наступне слово</button>
+        </div>
+    </div>
+</body>
+</html>

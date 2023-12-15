@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgb(236, 243, 252);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modalw {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1;
+}
+
+.modal-innerw {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    background: rgb(252, 245, 245);
+    width: 300px;
+    padding: 20px;
+    border-radius:7px;
+    display: inline-block;
+    text-align: center;
+}
+
+.modal-innerw > button {
+    width: 250px;
+    height: 70px;  
+
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background:  rgb(8, 171, 89);
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(5, 27, 0, 0.3);
+    border: none;
+}
+
+.modal-innerw > button:hover {
+    background: linear-gradient(to bottom, #45a049 0%, #4CAF50 100%);
+}
+
+#main {
+    width: 400px;
+    margin: 70px auto 0 auto;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 0;
+}
+
+#stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#stat > div {
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+#stat > .correct {
+    color: green;
+}
+
+#stat > .incorrect {
+    color: red;
+}
+
+#guess-block {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#guess-block.correct {
+    border: 2px solid green;
+}
+
+#guess-block.incorrect {
+    border: 2px solid red;
+}
+
+#guess-block .word {
+    font-size: 1.3em;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#guess-block img {
+    height: 200px;
+}
+
+#card-nav {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+#card-nav > *::selection,
+#stat > *::selection,
+#enter #submit::selection,
+#guess-block .word::selection {
+    background: none;
+}
+
+#card-nav .card-pos {
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+#card-nav > span.left,
+#card-nav > span.right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: 5px;
+}
+
+#card-nav > span.left {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent green transparent transparent;
+}
+
+#card-nav > span.right {
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent green;
+}
+
+#card-nav > span:hover {
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+}
+
+#card-nav > span.blocked,
+#card-nav > span.blocked:hover {
+    opacity: 0.2;
+}
+
+#enter {
+    margin-top: 20px;
+}
+
+#enter input {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    background:  rgb(249, 250, 255);
+    border:none;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+
+}
+
+#enter input:disabled, #enter #submit:disabled {
+    cursor: not-allowed;
+}
+
+#enter #submit {
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight:600;
+    width: 200px;
+    height:70px;
+    margin-top: 5px;
+    padding: 2px 5px;
+    background:  rgb(197, 252, 219);
+
+    border:none;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+@media screen and (max-width: 550px) {
+    #main {
+        width: 90%;
+    }
+
+    #guess-block img {
+        width: 90%;
+        height: unset;
+    }
+
+    .modal-innerw {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        left: 50%;
+        background: white;
+        width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    #enter input {
+        width: 90%;
+    }
+}
